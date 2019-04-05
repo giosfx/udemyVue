@@ -3,11 +3,14 @@
 <div id="app">
     <p>{{ contador }}</p>
     <button v-on:click="somar(5)">Somar 5</button>
+    <hr>
     <p v-on:mousemove="movimentoXY">{{ x }} e {{ y }}
         <span v-on:mousemove.stop>PARAR POR AQUIII!</span>
     </p>
+    <hr>
     <a v-on:click.prevent="" href="http://google.com.br">Google</a>
-
+    <hr>
+    <input type="text" v-on:keyup.enter.alt="exibirAlerta">
 </div>
 
 <script>
@@ -26,7 +29,10 @@
             movimentoXY(event){
                 this.x = event.clientX,
                 this.y = event.clientY
-            }        
+            },
+            exibirAlerta(){
+               alert('ALERTA KRAI')
+            }      
         }    
     })
 
